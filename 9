@@ -1,0 +1,29 @@
+۹_ تابع زیر را نوشته و آزمایش کنید این تابع ایندکس اولین مقدار کمینه مینیمم را از میان n عنصر اول آرایه مفروض بر می گرداند.
+
+int minIndex(float a[ ], int n);
+
+پاسخ:
+#include<iostream.h>
+
+int minIndex(float[], int);
+
+int main()
+{
+    float a[] = {11.1, 33.3, 5.5, 77.7, 5.5};
+    int size = sizeof(a) / sizeof(float);
+
+    cout << "minIndex(a,size) = " << minIndex(a, size) << endl;
+
+    return 0;
+}
+
+int minIndex(float a[], int n)
+{
+    int index = 0;
+
+    for(int i = 1; i < n; i++)
+        if(a[i] < a[index])
+            index = i;
+
+    return index;
+}
